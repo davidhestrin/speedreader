@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<style>
+#demo{
+ 	font-size: 88px;
+    text-align: center;
+}
+</style>
+<body>
+
+<p id="memo">Paste your text here:<input id="numb"><button type="button" onclick="myFunction()">click here</button></p>
+<p>How many words per minute would you like?<input id="speed"><button type="button" onclick="mySpeed()">click here</button></p>
+<p id="demo"></p>
+
+<script>
+speed = 120
+
+function mySpeed() {
+  var wpm = document.getElementById("speed").value;
+  speed = 60000/wpm
+
+}
+function myFunction() {
+var myVar = setInterval(myTimer, speed);
+var str = document.getElementById("numb").value;
+var res = str.split(" ");
+
+idx = 0
+function myTimer() {
+    document.getElementById("demo").innerHTML = res[idx];
+    idx += 1
+
+}
+}
+</script>
+
+</body>
+</html>
